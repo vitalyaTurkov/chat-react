@@ -1,0 +1,29 @@
+.message-candidate {
+    background: rgba(223, 229, 121, 0.9);
+    padding: 40px;
+    max-width: 600px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.message-hiring-manager {
+    background: rgba(0, 167, 204, 0.9);
+    padding: 40px;
+    max-width: 600px;
+    margin-bottom: 10px;
+}
+
+.messaging {
+    max-width: 600px;
+    margin: 20px auto 0;
+}
+
+.message-text {
+    margin-top: 10px;
+}
+
+.message-name {
+    margin-left: 10px;
+    display: inline-block;
+}
