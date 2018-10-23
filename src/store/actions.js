@@ -1,6 +1,4 @@
-import {ACTION_LOGIN} from './actionTypes'
-import {ACTION_NEW_MESSAGE} from './actionTypes'
-import {ACTION_NEXT_TYPE_OF_MESSAGE} from "./actionTypes";
+import {ACTION_LOGIN, ACTION_NEW_MESSAGE, ACTION_NEXT_TYPE_OF_MESSAGE, ACTION_NEW_MESSAGES} from './actionTypes'
 
 export const login = (mLogin) => {
     return {
@@ -9,9 +7,16 @@ export const login = (mLogin) => {
     };
 };
 
-export const newMessage = (messages) => {
+export const newMessage = (message) => {
     return {
         type: ACTION_NEW_MESSAGE,
+        payload: message
+    };
+};
+
+export const newMessages = (messages) => {
+    return {
+        type: ACTION_NEW_MESSAGES,
         payload: messages
     };
 };

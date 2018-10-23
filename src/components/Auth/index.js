@@ -7,9 +7,27 @@ import './index.css'
 //Компонент авторизации
 //При успешной авторизации изменит свойство родителя mLogin на введенное в поле имя
 export default class Auth extends React.Component {
-    propTypes = {
+    static propTypes = {
         parent: PropTypes.object
     };
+
+    mountInput = input => this.loginInput = input;
+
+    handleKeyPress = e => {
+        if(e.key === 'Enter') {
+            this.handleAuth();
+        }
+    };
+
+    handleAuth = () => {
+        if(this.loginInput.value !== '') {
+            this.props.login(this.loginInput.value);
+        }
+        else {
+            alert("Введи свое имя");
+        }
+    };
+
     render() {
         return (
             <div>
@@ -19,21 +37,18 @@ export default class Auth extends React.Component {
                             <div className="form-horizontal">
                                 <span className="heading">ВХОД В ЧАТ</span>
                                 <div className="form-group">
-                                    <input type="text" className="form-control" id="inputLogin" placeholder="Имя"
-                                    ref={(input) => this.loginInput = input}/>
-                                        <i className="fa fa-user"/>
+                                    <input type="text"
+                                           className="form-control"
+                                           id="inputLogin" placeholder="Имя"
+                                           ref={this.mountInput}
+                                           onKeyPress={this.handleKeyPress}
+                                           autoFocus={true}/>
+                                    <i className="fa fa-user"/>
                                 </div>
                                 <div className="form-group">
                                     <button type="submit"
                                             className="btn btn-default"
-                                            onClick={() => {
-                                                if(this.loginInput.value !== '') {
-                                                    this.props.parent.props.login(this.loginInput.value);
-                                                }
-                                                else {
-                                                    alert("Введи свое имя");
-                                                }
-                                            }}>
+                                            onClick={this.handleAuth}>
                                         ВХОД
                                     </button>
                                 </div>
