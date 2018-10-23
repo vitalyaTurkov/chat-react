@@ -9,6 +9,6 @@
 ### Скриншоты приложения 
 ![alt-текст](https://pp.userapi.com/c845120/v845120463/10e457/WwK9hqH8Anw.jpg "Пример 1")
 ![alt-текст](https://pp.userapi.com/c848732/v848732463/a0c66/jWgmDVQjMzk.jpg "Пример 2")
-###Запуск:
+### Запуск:
 1. npm i,
 2. npm start
